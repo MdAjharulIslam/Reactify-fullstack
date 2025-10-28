@@ -1,9 +1,10 @@
 import express from "express";
-import User from "../models/User";
+import User from "../models/User.js";
+
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-export const register = async (req, res) => {
+ const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -51,3 +52,6 @@ export const register = async (req, res) => {
     });
   }
 };
+
+
+export default register
