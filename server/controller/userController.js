@@ -93,3 +93,20 @@ export const login = async(req, res)=>{
     });
   }
 }
+
+export const getAllUser = async(req, res)=>{
+  try {
+    const allUsers = await User.find();
+    return res.json({
+      success:true,
+      allUsers
+    })
+    
+  } catch (error) {
+     console.error(error.message);
+    return res.status(400).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+}
