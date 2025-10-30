@@ -1,11 +1,17 @@
+
+import dotenv from 'dotenv'
+dotenv.config();
 import express, { urlencoded } from 'express'
 import homeRoute from './routes/homeRoute.js';
 import cors from 'cors'
 import connectDB from './config/db.js';
-import dotenv from 'dotenv'
+
 import userRoute from './routes/userRoute.js';
+import productRoute from './routes/productRoute.js'
+import imagekit from "./config/imagekit.js";
+import multer from 'multer';
 const app = express();
-dotenv.config();
+
 
 const PORT = 4000;
 await connectDB();
@@ -17,6 +23,8 @@ app.get('/', (req, res)=>{
 })
 app.use('/api',homeRoute)
 app.use('/api/user',userRoute)
+
+ app.use('/api/product',productRoute)
 
 app.listen(PORT, ()=>{
     console.log(`the app is running on Port ${PORT}`)
