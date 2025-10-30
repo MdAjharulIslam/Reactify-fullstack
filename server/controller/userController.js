@@ -99,7 +99,7 @@ export const getAllUser = async(req, res)=>{
     const allUsers = await User.find();
     return res.json({
       success:true,
-      allUsers
+     message:"here is all users"
     })
     
   } catch (error) {
