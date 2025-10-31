@@ -13,6 +13,7 @@ export const addImage = async (req, res) => {
         message: "image not uploaded",
       });
     }
+    
 
     const imageBuffer = fs.readFileSync(imageFile.path);
 
