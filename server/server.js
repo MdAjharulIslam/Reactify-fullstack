@@ -1,7 +1,7 @@
-
+import express, { urlencoded } from 'express'
 import dotenv from 'dotenv'
 dotenv.config();
-import express, { urlencoded } from 'express'
+
 import homeRoute from './routes/homeRoute.js';
 import cors from 'cors'
 import connectDB from './config/db.js';

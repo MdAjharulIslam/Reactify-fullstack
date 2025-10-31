@@ -8,6 +8,10 @@ const productSchema =  new mongoose.Schema({
     image:{
         type:File,
         required:true
+    },
+    isAvailable:{
+        type:Boolean,
+        required:true
     }
 })
 
