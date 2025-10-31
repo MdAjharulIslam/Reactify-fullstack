@@ -10,13 +10,25 @@ import userRoute from './routes/userRoute.js';
 import productRoute from './routes/productRoute.js'
 import imagekit from "./config/imagekit.js";
 import multer from 'multer';
+
+
+
 const app = express();
 
 
 const PORT = 4000;
 await connectDB();
 app.use(express.json())
-app.use(cors());
+
+const allowOrigin = [
+      'http://localhost:5173',
+  'https://grocery-app-self.vercel.app'
+]
+app.use(cors({
+    origin:allowOrigin,
+    credentials:true
+}));
+
 app.use(express.urlencoded({extended:true}));
 app.get('/', (req, res)=>{
     res.send("app working on")
